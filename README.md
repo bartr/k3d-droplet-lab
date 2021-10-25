@@ -1,10 +1,12 @@
 # Kubernetes in Droplets
 
-> Setup a Kubernetes cluster using `k3d` running in a Droplet
+> Setup a Kubernetes cluster using `k3d` running in a `Droplet`
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## Overview
+
+> Note: the `Droplet` install script is not fully automated yet
 
 This is a template that will setup a Kubernetes developer cluster using `k3d` in a `Digital Ocean Droplet`
 
@@ -53,7 +55,7 @@ make check
   - Prometheus <https://sfo.bartr.co:3000>
   - Grafana <https://sfo.bartr.co:3200>
     - Login: admin
-    - Password: akdc-512
+    - Password: (ask me)
 
 ## Validate deployment with k9s
 
