@@ -50,6 +50,8 @@ make check
 ## Service endpoints
 
 - All endpoints are usable in your browser via `ctl+click`
+  - We map the `NodePorts by removing a zero
+    - https is provided by `Caddy` and `Let's Encrypt`
   - Application <https://sfo.bartr.co>
   - WebValidate <https://sfo.bartr.co:3088/metrics>
   - Prometheus <https://sfo.bartr.co:3000>
@@ -94,7 +96,11 @@ A `jump box` pod is created so that you can execute commands `in the cluster`
 
 - use the `kj` alias to run a bash shell in the jumpbox
 - use the `kje` alias to execute a command in the jumpbox
-  - `kje http ngsa-memory:8080/version`
+    ```bash
+    
+    kje http ngsa-memory:8080/version
+    
+    ```
 
 ## View Prometheus Dashboard
 
@@ -108,11 +114,10 @@ A `jump box` pod is created so that you can execute commands `in the cluster`
 
 ## Launch Grafana Dashboard
 
-- Ctl+Click the Grafana link <https://sfo.bartr.co:3000>
+- Ctl+Click the Grafana link <https://sfo.bartr.co:3200>
 - Grafana login info
   - admin
-  - akdc-512
-
+  - (ask me)
 
 ## View Grafana Dashboard
 
@@ -125,7 +130,7 @@ A `jump box` pod is created so that you can execute commands `in the cluster`
 
 ```bash
 
-# from Codespaces terminal
+# from terminal
 
 # run a baseline test (will generate warnings in Grafana)
 make test
@@ -147,7 +152,7 @@ make load-test
 
 ## View Fluent Bit Logs
 
-- Start `k9s` from the Codespace terminal
+- Start `k9s` from the terminal
 - Press `0` to show all `namespaces`
 - Select `fluentbit` and press `enter`
 - Press `enter` again to see the logs
@@ -206,18 +211,10 @@ For help and questions about using this project, please open a GitHub issue.
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution.
 
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services.
-
-Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 
 Any use of third-party trademarks or logos are subject to those third-party's policies.
