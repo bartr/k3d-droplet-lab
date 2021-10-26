@@ -4,3 +4,14 @@ flux bootstrap git \
 --password=$(cat ~/.git-credentials | sed 's@https://bartr:@@' | sed 's/@github.com//') \
 --token-auth=true \
 --path=deploy/$(hostname)
+
+flux create source git cnp \
+--url=https://github.com/bartr/auto-gitops \
+--user=bartr \
+--password $(cat ~/.git-credentials | sed 's@https://bartr:@@' | sed 's/@github.com//')
+
+flux create kustomization cnp \
+--source GitRepository/cnp \
+--path=deploy/$(hostname) \
+--prune true \
+--interval 1m
