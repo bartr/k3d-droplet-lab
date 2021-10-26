@@ -1,4 +1,4 @@
-.PHONY: help all create delete deploy check clean test load-test
+.PHONY: help all create delete deploy check clean test load-test flux caddy code-server
 
 help :
 	@echo "Usage:"
@@ -78,3 +78,19 @@ test :
 load-test :
 	# use WebValidate to run a 60 second test
 	cd webv && webv --verbose --server http://localhost:30080 --files benchmark.json --run-loop --sleep 100 --duration 60
+
+flux :
+	@./flux-bootstrap
+
+caddy :
+	# install caddy
+	sudo apt update
+	sudo apt upgrade -y
+	sudo apt-get install -y caddy
+	sudo systemctl status caddy
+
+code-server :
+	# install code-server
+	~/cs-install.sh --version 3.10.2
+	rm ~/cs-install.sh
+	systemctl enable --now code-server@$USER
