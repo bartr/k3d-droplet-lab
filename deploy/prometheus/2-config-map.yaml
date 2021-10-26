@@ -103,17 +103,9 @@ data:
         static_configs:
           - targets: [ 'ngsa.ngsa.svc.cluster.local:8080' ]
 
-      - job_name: 'ngsa-memory'
-        static_configs:
-          - targets: [ 'ngsa-memory.default.svc.cluster.local:8080' ]
-
-      - job_name: 'ngsa-cosmos'
-        static_configs:
-          - targets: [ 'ngsa-cosmos.default.svc.cluster.local:8080' ]
-
       - job_name: 'webv'
         static_configs:
-          - targets: [ 'webv.default.svc.cluster.local:8080' ]
+          - targets: [ 'webv.ngsa.svc.cluster.local:8080' ]
 
       - job_name: 'kubernetes-cadvisor'
 
