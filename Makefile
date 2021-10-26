@@ -93,4 +93,4 @@ code-server :
 	# install code-server
 	~/cs-install.sh --version 3.10.2
 	rm ~/cs-install.sh
-	systemctl enable --now code-server@$USER
+	sudo systemctl enable --now code-server@$USER
