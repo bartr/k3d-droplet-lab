@@ -1,3 +1,5 @@
+#!/bin/sh
+
 flux bootstrap git \
 --url=https://github.com/bartr/auto-gitops \
 --username=bartr \
