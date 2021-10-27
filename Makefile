@@ -84,13 +84,13 @@ flux :
 
 caddy :
 	# install caddy
-	sudo apt update
-	sudo apt upgrade -y
 	sudo apt-get install -y caddy
 	sudo systemctl status caddy
 
 code-server :
 	# install code-server
+	curl -fsSL https://code-server.dev/install.sh > cs-install.sh
+	chmod +x cs-install.sh
 	~/cs-install.sh --version 3.10.2
 	# rm ~/cs-install.sh
 	sudo systemctl enable --now code-server@${USER}
