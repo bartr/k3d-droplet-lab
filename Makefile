@@ -11,7 +11,7 @@ help :
 	@echo "   make load-test        - run a 60 second WebValidate test"
 	@echo "   make clean            - delete the apps from the cluster"
 
-all : create deploy
+all : create deploy flux
 
 delete :
 	# delete the cluster (if exists)

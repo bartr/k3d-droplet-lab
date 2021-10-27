@@ -7,7 +7,8 @@ flux bootstrap git \
 
 flux create source git cnp \
 --url=https://github.com/bartr/auto-gitops \
---user=bartr \
+-u=bartr \
+--branch=main \
 --password $(cat ~/.git-credentials | sed 's@https://bartr:@@' | sed 's/@github.com//')
 
 flux create kustomization cnp \
@@ -15,3 +16,5 @@ flux create kustomization cnp \
 --path=deploy/$(hostname) \
 --prune true \
 --interval 1m
+
+flux reconcile source git cnp
