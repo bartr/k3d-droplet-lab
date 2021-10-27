@@ -32,8 +32,6 @@ Output from `make all` should resemble this
 ```text
 
 default      jumpbox                                   1/1   Running   0   25s
-default      ngsa-memory                               1/1   Running   0   33s
-default      webv                                      1/1   Running   0   31s
 logging      fluentbit                                 1/1   Running   0   31s
 monitoring   grafana-64f7dbcf96-cfmtd                  1/1   Running   0   32s
 monitoring   prometheus-deployment-67cbf97f84-tjxm7    1/1   Running   0   32s
